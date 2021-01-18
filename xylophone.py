@@ -3,7 +3,7 @@ import time
 
 ROTATE_SERVO = 1
 PLAY_SERVO = 2
-SERVO_DOWN_TIME = 0.1
+SERVO_DOWN_TIME = 0.099
 SERVO_MOVE_TIME = 0.40
 REST = 999
 
@@ -39,18 +39,18 @@ def play_song(song):
         play_note(note)
 
 
-#time.sleep(5.0)
+time.sleep(5.0)
 
 # twinkle twinkle little star
 song = [ 7,7,3,3,2,2,3,REST,4,4,5,5,6,6,7,REST,3,3,4,4,5,5,6,REST,3,3,4,4,5,5,6,REST,7,7,3,3,2,2,3,REST,4,4,5,5,6,6,7 ]
 
-#play_song(song)
+play_song(song)
 
-scales = [ 0,1,2,3,4,5,6,7,6,5,4,3,2,1,0 ]
+#scales = [ 0,1,2,3,4,5,6,7,6,5,4,3,2,1,0 ]
 
-play_song(scales)
+#play_song(scales)
 
-play_song([ 0,1,0,1,2,2,3,4,3,4,5,4,5,6,5,6,7,6,7 ])
+#play_song([ 0,1,0,1,2,2,3,4,3,4,5,4,5,6,5,6,7,6,7 ])
 
 #play_song([ 0, 0, 0, 1, 2, 3, 4, 5, 6, 7 ])
 
