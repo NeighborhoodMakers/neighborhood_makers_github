@@ -21,17 +21,17 @@ class Xylophone
       up = UP[position]
       rotate = ROTATE[position]
 
-      @hummingbird.servo(ROTATE_SERVO, rotate)
+      @hummingbird.position_servo(ROTATE_SERVO, rotate)
       sleep(SERVO_MOVE_TIME)
 
-      @hummingbird.servo(PLAY_SERVO, down)
+      @hummingbird.position_servo(PLAY_SERVO, down)
       sleep(SERVO_DOWN_TIME)
-      @hummingbird.servo(PLAY_SERVO, up)
+      @hummingbird.position_servo(PLAY_SERVO, up)
     end
   end
 
   def play_song(song)
-    @hummingbird.servo(ROTATE_SERVO, ROTATE[song[0]])
+    @hummingbird.position_servo(ROTATE_SERVO, ROTATE[song[0]])
 
     sleep(SERVO_MOVE_TIME)
 
@@ -41,6 +41,6 @@ class Xylophone
   end
 
   def stop_song
-    @hummingbird.servo(ROTATE_SERVO, ROTATE[3])
+    @hummingbird.position_servo(ROTATE_SERVO, ROTATE[3])
   end
 end
