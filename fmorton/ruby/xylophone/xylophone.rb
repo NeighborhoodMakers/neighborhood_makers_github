@@ -10,7 +10,7 @@ class Xylophone
   ROTATE = [ 167, 148, 120, 90, 60, 38, 20, 5 ]
 
   def initialize
-    @hummingbird = BirdbrainHummingbird.new
+    @hummingbird = BirdbrainHummingbird.connect
   end
 
   def play_note(position)
