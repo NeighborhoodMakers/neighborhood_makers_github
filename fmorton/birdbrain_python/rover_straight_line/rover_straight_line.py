@@ -1,25 +1,21 @@
 from BirdBrain import Hummingbird
 import time
 
-def forward(rover, speed):
-    #rover.setRotationServo(1, speed)
-    #rover.setRotationServo(2, -speed)
-    pass
-
-def stop():
-    pass
+ROVER_MOTOR_LEFT = 1
+ROVER_MOTOR_RIGHT = 2
 
 rover = Hummingbird('A')
 
-rover.setTriLED(1, 50, 50, 75)
-rover.setTriLED(2, 50, 50, 75)
+rover.setTriLED(1, 0, 100, 0)
+rover.setTriLED(2, 0, 100, 0)
 
-#while True:
-    #if keyboard.is_pressed('left'):
-        #print("left")
-#    pass
+rover.setRotationServo(ROVER_MOTOR_LEFT, 40 * 1.00)
+rover.setRotationServo(ROVER_MOTOR_RIGHT, -40 * 1.15)
 
-forward(rover, 50)
+time.sleep(4)
+
+rover.setTriLED(1, 0, 100, 0)
+rover.setTriLED(2, 0, 100, 0)
 
 time.sleep(1)
 
