@@ -14,8 +14,11 @@ rover.setRotationServo(ROVER_MOTOR_RIGHT, -40 * 1.15)
 
 time.sleep(4)
 
-rover.setTriLED(1, 0, 100, 0)
-rover.setTriLED(2, 0, 100, 0)
+rover.setRotationServo(ROVER_MOTOR_LEFT, 0)
+rover.setRotationServo(ROVER_MOTOR_RIGHT, 0)
+
+rover.setTriLED(1, 100, 0, 0)
+rover.setTriLED(2, 100, 0, 0)
 
 time.sleep(1)
 
