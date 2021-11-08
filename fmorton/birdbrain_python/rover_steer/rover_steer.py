@@ -1,6 +1,4 @@
 import pygame
-import sys
-print(sys.path)
 import time
 from BirdBrain import Hummingbird
 from pygame.locals import *
@@ -100,7 +98,7 @@ def key_down(key):
         backward()
     elif key in [ pygame.K_5, pygame.K_KP5 ]:
         stop()
-    elif key in [ pygame.K_x ]:
+    elif key in [ pygame.K_x, pygame.K_RETURN ]:
         stop_all()
 
 def key_up(key):
