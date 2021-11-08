@@ -1,4 +1,6 @@
 import pygame
+import sys
+print(sys.path)
 import time
 from BirdBrain import Hummingbird
 from pygame.locals import *
