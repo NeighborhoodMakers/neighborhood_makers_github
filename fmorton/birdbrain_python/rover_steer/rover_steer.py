@@ -1,4 +1,5 @@
 import pygame
+
 import time
 from BirdBrain import Hummingbird
 from pygame.locals import *
@@ -22,6 +23,7 @@ rover = Hummingbird('A')
 rover_moving = False
 
 pygame.init()
+
 
 def direction_indicator(direction):
     global rover_moving  # global variables are a horrible practice
