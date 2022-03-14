@@ -22,13 +22,26 @@ def walk(robot, port):
     setPositionServoWithSleep(robot, port, 90)
     sleep(WALK_DELAY)
 
+def motor_on(robot):
+    robot.setLED(1, 30)
+    robot.setLED(2, 20)
+
+def motor_off(robot):
+    robot.setLED(1, 0)
+    robot.setLED(2, 0)
+
 robot = Hummingbird('A')
 
 reset(robot)
 
 for k in range(20):
-    walk(robot, 1)
-    walk(robot, 2)
+    #walk(robot, 1)
+    #walk(robot, 2)
+
+    motor_on(robot)
+    sleep(1)
+    motor_off(robot)
+    sleep(1)
 
     print("SPIN")
 
