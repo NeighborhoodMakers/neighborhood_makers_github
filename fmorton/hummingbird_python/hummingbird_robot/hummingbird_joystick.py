@@ -37,11 +37,4 @@ class HummingbirdJoyStick:
         x = self.joystick_round(self.joy_stick.getVoltage(3), self.x_base)
         y = self.joystick_round(self.joy_stick.getVoltage(2), self.y_base)
 
-        print(x, y)
-
-
-joy = HummingbirdJoyStick()
-
-while True:
-    joy.values()
-    time.sleep(0.01)
+        return(x, y)

@@ -1,5 +1,11 @@
 import pygame
 
+
+
+
+
+
+
 import time
 from BirdBrain import Hummingbird
 from pygame.locals import *
@@ -21,7 +27,7 @@ DIRECTION_BACKWARD = 'B'
 DIRECTION_STOP = 'S'
 DIRECTION_STOP_ALL = 'X'
 
-robot = HummingbirdDualMotorDriver('A')
+robot = HummingbirdDualMotorDriver('B')
 robot_moving = False
 
 pygame.init()
