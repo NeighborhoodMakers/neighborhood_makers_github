@@ -2,9 +2,9 @@ from BirdBrain import Hummingbird
 import time
 
 class HummingbirdDualMotorDriver:
-    MINIMUM_SPEED = 16
+    MINIMUM_SPEED = 30
 
-    def __init__(self, device = 'A', minimum_speed = 40):
+    def __init__(self, device = 'A', minimum_speed = MINIMUM_SPEED):
         self.device = device
         self.minimum_speed = minimum_speed
 
@@ -45,7 +45,6 @@ class HummingbirdDualMotorDriver:
     def move(self, speeds):
         left_speed, right_speed = speeds
 
-        print("Moving..........................................", left_speed, right_speed)
         self.move_left_motor(left_speed)
         self.move_right_motor(right_speed)
 

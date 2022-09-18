@@ -2,10 +2,8 @@ from BirdBrain import Hummingbird
 import time
 
 class HummingbirdJoyStick:
-    ZERO_MARGIN = 0.02
-    ZERO_MAX = 3.0
-    ZERO_MIN = 0.0
-    ZERO_BIAS = 1.25
+    ZERO_WINDOW_SIZE = 0.02
+    ONE_HUNDRED_ESCALATOR = 1.25
 
     def __init__(self, device = 'A'):
         self.device = device
@@ -19,10 +17,10 @@ class HummingbirdJoyStick:
         self.y_base = round(self.joy_stick.getVoltage(3), 2)
 
     def joystick_round(self, value, base):
-        if (value > (base - self.ZERO_MARGIN)) and (value < (base + self.ZERO_MARGIN)):
+        if (value > (base - self.ZERO_WINDOW_SIZE)) and (value < (base + self.ZERO_WINDOW_SIZE)):
             return(0)
 
-        normalized_value = (100 - ((3.0 - value) / ((3.0 - base) / 100))) * self.ZERO_BIAS
+        normalized_value = (100 - ((3.0 - value) / ((3.0 - base) / 100))) * self.ONE_HUNDRED_ESCALATOR
 
         if normalized_value < -100.0:
             return(-100.0)
