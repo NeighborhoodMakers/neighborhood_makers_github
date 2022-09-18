@@ -42,7 +42,10 @@ class HummingbirdDualMotorDriver:
         else:
             self.robot.setTriLED(2, 100, 0, abs(speed))
 
-    def move(self, left_speed, right_speed):
+    def move(self, speeds):
+        left_speed, right_speed = speeds
+
+        print("Moving..........................................", left_speed, right_speed)
         self.move_left_motor(left_speed)
         self.move_right_motor(right_speed)
 

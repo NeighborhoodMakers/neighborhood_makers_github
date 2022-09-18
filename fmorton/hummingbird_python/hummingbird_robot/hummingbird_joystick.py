@@ -15,8 +15,8 @@ class HummingbirdJoyStick:
 
     def calibrate(self):
         self.button_base = round(self.joy_stick.getVoltage(1), 2)
-        self.x_base = round(self.joy_stick.getVoltage(3), 2)
-        self.y_base = round(self.joy_stick.getVoltage(2), 2)
+        self.x_base = round(self.joy_stick.getVoltage(2), 2)
+        self.y_base = round(self.joy_stick.getVoltage(3), 2)
 
     def joystick_round(self, value, base):
         if (value > (base - self.ZERO_MARGIN)) and (value < (base + self.ZERO_MARGIN)):
@@ -34,7 +34,7 @@ class HummingbirdJoyStick:
 
     def values(self):
         button = self.joystick_round(self.joy_stick.getVoltage(1), self.button_base)
-        x = self.joystick_round(self.joy_stick.getVoltage(3), self.x_base)
-        y = self.joystick_round(self.joy_stick.getVoltage(2), self.y_base)
+        x = self.joystick_round(self.joy_stick.getVoltage(2), self.x_base)
+        y = self.joystick_round(self.joy_stick.getVoltage(3), self.y_base)
 
-        return(x, y)
+        return(-x, y)
