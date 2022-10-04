@@ -1,5 +1,6 @@
-from BirdBrain import Hummingbird
+import collections
 import time
+from BirdBrain import Hummingbird
 
 class HummingbirdDualMotorDriver:
     MINIMUM_SPEED = 30
@@ -43,7 +44,7 @@ class HummingbirdDualMotorDriver:
             self.robot.setTriLED(2, 100, 0, abs(speed))
 
     def move(self, left_speed, right_speed = None):
-        if type(left_speed) is list:
+        if isinstance(left_speed, collections.Sequence):
             left_speed, right_speed = left_speed
 
         self.move_left_motor(left_speed)
