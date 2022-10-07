@@ -4,7 +4,7 @@ from hummingbird_dual_motor_driver import *
 
 motors = HummingbirdDualMotorDriver('A')
 
-motors.move([ 0, 50 ])
+motors.move([ -50, -50 ])
 
 time.sleep(1)
 
