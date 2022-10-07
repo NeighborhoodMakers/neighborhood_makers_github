@@ -7,7 +7,9 @@ class HummingbirdDualMotorDriver:
 
     def __init__(self, device = 'A', minimum_speed = None):
         self.device = device
-        if minimum_speed is None: self.minimum_speed = MINIMUM_SPEED
+        self.minimum_speed = minimum_speed
+
+        if minimum_speed is None: self.minimum_speed = HummingbirdDualMotorDriver.MINIMUM_SPEED
 
         self.left_polarity = 1
         self.right_polarity = 1
