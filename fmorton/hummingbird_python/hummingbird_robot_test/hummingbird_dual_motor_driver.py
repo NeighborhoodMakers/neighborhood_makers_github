@@ -5,9 +5,9 @@ from BirdBrain import Hummingbird
 class HummingbirdDualMotorDriver:
     MINIMUM_SPEED = 30
 
-    def __init__(self, device = 'A', minimum_speed = MINIMUM_SPEED):
+    def __init__(self, device = 'A', minimum_speed = None):
         self.device = device
-        self.minimum_speed = minimum_speed
+        if minimum_speed is None: self.minimum_speed = MINIMUM_SPEED
 
         self.left_polarity = 1
         self.right_polarity = 1
@@ -19,6 +19,10 @@ class HummingbirdDualMotorDriver:
 
     def reverse_right_polarity(self):
         self.right_polarity = -self.right_polarity
+
+    def reverse_polarity(self):
+        reverse_left_polarity()
+        reverse_right_polarity()
 
     def adjust_speed_for_polarity(self, speed, multiplier):
         return(speed * multiplier)

@@ -1,7 +1,7 @@
 import time
 from hummingbird_robot import *
 
-robot = HummingbirdRobot('A', 'C', 10)
+robot = HummingbirdRobot(motors_device = 'A')
 
 while True:
     robot.move()
