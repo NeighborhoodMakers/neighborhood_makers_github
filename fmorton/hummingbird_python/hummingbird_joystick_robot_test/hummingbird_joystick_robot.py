@@ -17,7 +17,6 @@ class HummingbirdJoystickRobot:
 
         self.motors = None
         self.joystick = None
-        self.joystick_calculator = None
 
         if self.motor_device is not None:
             try:
