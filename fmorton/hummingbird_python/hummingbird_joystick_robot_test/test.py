@@ -1,6 +1,6 @@
 import time
 from BirdBrain import Hummingbird
-from hummingbird_dual_motor_driver import *
+from HummingbirdDualMotorDriver import *
 
 #robot = Hummingbird('A')
 

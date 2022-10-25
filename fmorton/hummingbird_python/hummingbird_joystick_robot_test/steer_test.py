@@ -1,16 +1,9 @@
 import pygame
-
-
-
-
-
-
-
 import time
 from BirdBrain import Hummingbird
 from pygame.locals import *
 
-from hummingbird_dual_motor_driver import *
+from HummingbirdDualMotorDriver import *
 
 ROVER_LED_LEFT = 1
 ROVER_LED_RIGHT = 2

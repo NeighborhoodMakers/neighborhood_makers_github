@@ -2,9 +2,9 @@ import time
 from BirdBrain import Hummingbird
 #from pygame.locals import *
 
-from hummingbird_dual_motor_driver import *
-from hummingbird_joystick import *
-from hummingbird_joystick_calculator import *
+from HummingbirdDualMotorDriver import *
+from HummingbirdJoystick import *
+from HummingbirdJoystickCalculator import *
 
 class HummingbirdJoystickRobot:
     def __init__(self, motor_device = 'A', joystick_device = None, minimum_motor_speed = None, joystick_calculator = None, joystick_rotation = None):

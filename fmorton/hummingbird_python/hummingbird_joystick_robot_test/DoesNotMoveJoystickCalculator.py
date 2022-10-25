@@ -1,4 +1,4 @@
-from hummingbird_joystick_calculator import *
+from HummingbirdJoystickCalculator import *
 
 class DoesNotMoveJoystickCalculator(HummingbirdJoystickCalculator):
     def speeds(self, x, y):

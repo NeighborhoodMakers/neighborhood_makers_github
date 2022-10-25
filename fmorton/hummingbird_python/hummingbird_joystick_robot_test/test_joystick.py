@@ -1,5 +1,5 @@
 import time
-from hummingbird_joystick import *
+from HummingbirdJoystick import *
 
 joystick = HummingbirdJoystick('A', 0)
 
