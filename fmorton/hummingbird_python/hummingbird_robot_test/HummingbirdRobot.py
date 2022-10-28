@@ -5,24 +5,25 @@ from BirdBrain import Hummingbird
 from HummingbirdDualMotorDriver import *
 from HummingbirdJoystick import *
 from HummingbirdJoystickCalculator import *
-from HummingbirdLedButtons import *
+from HummingbirdLedButton import *
 
 class HummingbirdRobot:
-    def __init__(self, motor_device = 'A', joystick_device = None, buttons_device = None, minimum_motor_speed = None, joystick_calculator = None, joystick_rotation = None):
+    def __init__(self, motor_device = 'A', joystick_device = None, button_device = None, minimum_motor_speed = None, joystick_calculator = None,
+            joystick_rotation = None, button_brightness_up = None, button_brightness_down = None):
         self.motor_device = motor_device
         self.joystick_device = joystick_device
-        self.buttons_device = buttons_device
+        self.button_device = button_device
         self.minimum_motor_speed = minimum_motor_speed
         self.joystick_calculator = joystick_calculator
         self.joystick_rotation = joystick_rotation
 
         self.motors = None
         self.joystick = None
-        self.buttons = None
+        self.button = None
 
         self.init_motors(motor_device, minimum_motor_speed)
         self.init_joystick(joystick_device, joystick_calculator, joystick_rotation)
-        self.init_buttons(buttons_device)
+        self.init_button(button_device)
 
     def init_motors(self, motor_device = 'A', minimum_motor_speed = None):
         if motor_device is not None: self.motor_device = motor_device
@@ -50,14 +51,14 @@ class HummingbirdRobot:
                 print("Joystick device not available")
                 raise
 
-    def init_buttons(self, buttons_device = None):
-        if buttons_device is not None: self.buttons_device = buttons_device
+    def init_button(self, button_device = None):
+        if button_device is not None: self.button_device = button_device
 
-        if self.buttons_device is not None:
+        if self.button_device is not None:
             try:
-                self.buttons = HummingbirdLedButtons(self.buttons_device)
+                self.button = HummingbirdLedButton(self.button_device)
             except ConnectionRefusedError:
-                print("LED buttons device not available")
+                print("LED button device not available")
                 raise
 
     def move(self):
@@ -67,10 +68,10 @@ class HummingbirdRobot:
             self.motors.move(self.joystick_calculator.speeds(x, y))
 
     def button_down(self, port):
-        if self.buttons_device is None:
+        if self.button_device is None:
             return False
         else:
-            return self.buttons.down(port)
+            return self.button.down(port)
 
     def button_up(self, port):
-        return not self.buttons.down(port)
+        return not self.button.down(port)

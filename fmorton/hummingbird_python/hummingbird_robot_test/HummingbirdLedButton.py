@@ -1,6 +1,6 @@
 from BirdBrain import Hummingbird
 
-class HummingbirdLedButtons:
+class HummingbirdLedButton:
     BRIGHTNESS_UP = 0
     BRIGHTNESS_DOWN = 100
 
@@ -9,20 +9,20 @@ class HummingbirdLedButtons:
         self.brightness_up = brightness_up
         self.brightness_down = brightness_down
 
-        self.buttons = None
+        self.button = None
 
-        if self.brightness_up is None: self.brightness_up = HummingbirdLedButtons.BRIGHTNESS_UP
-        if self.brightness_down is None: self.brightness_down = HummingbirdLedButtons.BRIGHTNESS_DOWN
+        if self.brightness_up is None: self.brightness_up = HummingbirdLedButton.BRIGHTNESS_UP
+        if self.brightness_down is None: self.brightness_down = HummingbirdLedButton.BRIGHTNESS_DOWN
 
         if self.device is not None:
             try:
-                self.buttons = Hummingbird(device)
+                self.button = Hummingbird(self.device)
             except ConnectionRefusedError:
-                print("LED buttons device not available")
+                print("LED button device not available")
                 raise
 
     def down(self, port):
-        if self.buttons.getVoltage(port) > 0.0:
+        if self.button.getVoltage(port) > 0.0:
             self.indicate_down(port)
             return True
         else:
@@ -33,7 +33,7 @@ class HummingbirdLedButtons:
         return(not self.down(port))
 
     def indicate_down(self, port):
-        self.buttons.setLED(port, self.brightness_down)
+        self.button.setLED(port, self.brightness_down)
 
     def indicate_up(self, port):
-        self.buttons.setLED(port, self.brightness_up)
+        self.button.setLED(port, self.brightness_up)
