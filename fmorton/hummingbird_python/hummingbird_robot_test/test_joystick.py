@@ -1,7 +1,7 @@
 import time
 from HummingbirdJoystick import *
 
-joystick = HummingbirdJoystick('A', 0)
+joystick = HummingbirdJoystick('B', 0)
 
 joystick.rotation = 2
 

@@ -62,11 +62,11 @@ class HummingbirdJoystickCalculator:
         else:
             if x > 0:
                 # right backwards
-                left_speed = 0
-                right_speed = 0
+                left_speed = -100
+                right_speed = -100
             else:
                 # left backwards
-                left_speed = 0
-                right_speed = 0
+                left_speed = -100
+                right_speed = -100
 
         return(left_speed, right_speed)
